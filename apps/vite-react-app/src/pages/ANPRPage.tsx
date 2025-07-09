@@ -280,7 +280,7 @@ export function ANPRPage() {
                 onChange={handleImageUpload}
                 className="hidden"
               />
-              
+
               {uploadedImage && (
                 <div className="mt-4 space-y-4">
                   <Button
@@ -308,12 +308,11 @@ export function ANPRPage() {
                 {steps.map((step) => (
                   <div
                     key={step.id}
-                    className={`flex items-center gap-4 p-4 rounded-lg border ${
-                      step.status === 'completed' ? 'bg-primary-50 border-primary-200' :
-                      step.status === 'processing' ? 'bg-accent-light border-accent' :
-                      step.status === 'error' ? 'bg-destructive/5 border-destructive' :
-                      'bg-muted border-muted-foreground/20'
-                    }`}
+                    className={`flex items-center gap-4 p-4 rounded-lg border ${step.status === 'completed' ? 'bg-primary-50 border-primary-200' :
+                        step.status === 'processing' ? 'bg-accent-light border-accent' :
+                          step.status === 'error' ? 'bg-destructive/5 border-destructive' :
+                            'bg-muted border-muted-foreground/20'
+                      }`}
                   >
                     <div className="flex-shrink-0">
                       {getStepIcon(step)}
@@ -326,9 +325,9 @@ export function ANPRPage() {
                       <Badge
                         variant={
                           step.status === 'completed' ? 'default' :
-                          step.status === 'processing' ? 'secondary' :
-                          step.status === 'error' ? 'destructive' :
-                          'outline'
+                            step.status === 'processing' ? 'secondary' :
+                              step.status === 'error' ? 'destructive' :
+                                'outline'
                         }
                       >
                         {step.status}
@@ -341,11 +340,10 @@ export function ANPRPage() {
           </Card>
         </div>
 
+
         {/* Results Section */}
         {anprResponse && (
           <div className="mt-8 space-y-6">
-            <Separator />
-            
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Detection Results */}
               <Card>
@@ -361,7 +359,7 @@ export function ANPRPage() {
                       <span className="text-sm font-medium">Processing Time:</span>
                       <Badge variant="secondary">{anprResponse.steps.detection.processing_time}s</Badge>
                     </div>
-                    
+
                     <div className="space-y-3">
                       {anprResponse.steps.detection.detections.map((detection, index) => (
                         <div key={index} className="p-3 bg-muted rounded-lg">
@@ -410,7 +408,7 @@ export function ANPRPage() {
                       <span className="text-sm font-medium">Processing Time:</span>
                       <Badge variant="secondary">{anprResponse.steps.recognition.processing_time}s</Badge>
                     </div>
-                    
+
                     {anprResponse.steps.recognition.results.map((result, index) => (
                       <div key={index} className="space-y-3">
                         <div className="p-4 bg-primary-50 rounded-lg border border-primary-200">
@@ -423,7 +421,7 @@ export function ANPRPage() {
                             </Badge>
                           </div>
                         </div>
-                        
+
                         <div className="space-y-2">
                           <span className="text-sm font-medium">Character Analysis:</span>
                           <div className="grid grid-cols-4 gap-2">
@@ -457,17 +455,17 @@ export function ANPRPage() {
                       <span className="text-sm font-medium">Total Time:</span>
                       <Badge variant="secondary">{anprResponse.processing_time}s</Badge>
                     </div>
-                    
+
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium">Plates Detected:</span>
                       <Badge variant="outline">{anprResponse.steps.detection.detections.length}</Badge>
                     </div>
-                    
+
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium">Plates Recognized:</span>
                       <Badge variant="outline">{anprResponse.steps.recognition.results.length}</Badge>
                     </div>
-                    
+
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium">Status:</span>
                       <Badge className="bg-primary-600">
@@ -486,19 +484,19 @@ export function ANPRPage() {
                             {((anprResponse.steps.detection.processing_time / anprResponse.processing_time) * 100).toFixed(1)}%
                           </span>
                         </div>
-                        <Progress 
-                          value={(anprResponse.steps.detection.processing_time / anprResponse.processing_time) * 100} 
+                        <Progress
+                          value={(anprResponse.steps.detection.processing_time / anprResponse.processing_time) * 100}
                           className="h-2"
                         />
-                        
+
                         <div className="flex justify-between text-sm">
                           <span>Recognition</span>
                           <span className="text-muted-foreground">
                             {((anprResponse.steps.recognition.processing_time / anprResponse.processing_time) * 100).toFixed(1)}%
                           </span>
                         </div>
-                        <Progress 
-                          value={(anprResponse.steps.recognition.processing_time / anprResponse.processing_time) * 100} 
+                        <Progress
+                          value={(anprResponse.steps.recognition.processing_time / anprResponse.processing_time) * 100}
                           className="h-2"
                         />
                       </div>
@@ -509,6 +507,33 @@ export function ANPRPage() {
             </div>
           </div>
         )}
+
+        {/* Real-time JSON Response Display */}
+        {anprResponse && (
+          <div className="mt-8 space-y-6">
+            <Separator />
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <code className="text-sm bg-muted px-2 py-1 rounded">JSON</code>
+                  API Response
+                </CardTitle>
+                <CardDescription>
+                  Real-time backend response from YOLO11 ANPR processing
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-slate-950 text-slate-50 p-4 rounded-lg overflow-x-auto">
+                  <pre className="text-sm">
+                    <code>{JSON.stringify(anprResponse, null, 2)}</code>
+                  </pre>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
       </div>
     </DefaultLayout>
   );
