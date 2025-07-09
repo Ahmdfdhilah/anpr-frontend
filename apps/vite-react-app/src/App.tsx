@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 import { Toaster } from "@workspace/ui/components/sonner";
+import { ANPRPage } from '@/pages/ANPRPage';
 
 
 function App() {
@@ -18,8 +19,8 @@ function App() {
             <BrowserRouter>
               <Toaster />
               <Routes>
-                <Route>
-                </Route>
+                <Route path="/" element={<ANPRPage />} />
+                <Route path="/anpr" element={<ANPRPage />} />
               </Routes>
             </BrowserRouter>
           </PersistGate>

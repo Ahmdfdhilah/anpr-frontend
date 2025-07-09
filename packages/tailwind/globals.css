@@ -112,145 +112,101 @@ body {
 
 @layer base {
   :root {
-    /* Base Colors */
-    --background: hsl(0 0% 100%);
-    --foreground: hsl(220 14% 20%);
-    
-    /* Card Components */
-    --card: hsl(0 0% 100%);
-    --card-foreground: hsl(220 14% 20%);
-    
-    /* Popover Components */
+    --background: hsl(48 33.3333% 97.0588%);
+    --foreground: hsl(48 19.6078% 20%);
+    --card: hsl(48 33.3333% 97.0588%);
+    --card-foreground: hsl(60 2.5641% 7.6471%);
     --popover: hsl(0 0% 100%);
-    --popover-foreground: hsl(220 14% 20%);
-    
-    /* Primary Colors - Biru Standar */
-    --primary: hsl(213 100% 34%); /* #004DAF */
-    --primary-foreground: hsl(0 0% 100%); /* #FFFFFF */
-    
-    /* Secondary Colors - Hijau Standar */
-    --secondary: hsl(149 43% 49%); /* #16A75C */
-    --secondary-foreground: hsl(0 0% 100%); /* #FFFFFF */
-    
-    /* Muted Colors - Netral untuk background subtle */
-    --muted: hsl(220 14% 96%);
-    --muted-foreground: hsl(220 14% 40%);
-    
-    /* Accent Colors - Menggunakan hijau yang lebih terang */
-    --accent: hsl(149 43% 49%); /* Sama dengan secondary untuk konsistensi */
-    --accent-foreground: hsl(0 0% 100%);
-    
-    /* Destructive Colors - Tetap menggunakan merah untuk error */
-    --destructive: hsl(0 84% 60%);
+    --popover-foreground: hsl(50.7692 19.4030% 13.1373%);
+    --primary: hsl(15.1111 55.5556% 52.3529%);
+    --primary-foreground: hsl(0 0% 100%);
+    --secondary: hsl(46.1538 22.8070% 88.8235%);
+    --secondary-foreground: hsl(50.7692 8.4967% 30.0000%);
+    --muted: hsl(44.0000 29.4118% 90%);
+    --muted-foreground: hsl(50.0000 2.3622% 50.1961%);
+    --accent: hsl(46.1538 22.8070% 88.8235%);
+    --accent-foreground: hsl(50.7692 19.4030% 13.1373%);
+    --destructive: hsl(60 2.5641% 7.6471%);
     --destructive-foreground: hsl(0 0% 100%);
-    
-    /* Border & Input */
-    --border: hsl(220 14% 91%);
-    --input: hsl(220 14% 91%);
-    --ring: hsl(213 100% 34%); /* Sama dengan primary */
-    
-    /* Chart Colors - Menggunakan palet yang harmonis */
-    --chart-1: hsl(213 100% 34%); /* Primary blue */
-    --chart-2: hsl(149 43% 49%); /* Secondary green */
-    --chart-3: hsl(45 93% 58%); /* Complementary yellow */
-    --chart-4: hsl(262 83% 58%); /* Purple */
-    --chart-5: hsl(16 100% 66%); /* Orange */
-    
-    /* Sidebar Colors */
-    --sidebar: hsl(0 0% 100%);
-    --sidebar-foreground: hsl(220 14% 20%);
-    --sidebar-primary: hsl(213 100% 34%);
-    --sidebar-primary-foreground: hsl(0 0% 100%);
-    --sidebar-accent: hsl(149 43% 49%);
-    --sidebar-accent-foreground: hsl(0 0% 100%);
-    --sidebar-border: hsl(220 14% 91%);
-    --sidebar-ring: hsl(213 100% 34%);
-    
-    /* Typography */
-    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --border: hsl(50 7.5000% 84.3137%);
+    --input: hsl(50.7692 7.9755% 68.0392%);
+    --ring: hsl(15.1111 55.5556% 52.3529%);
+    --chart-1: hsl(18.2813 57.1429% 43.9216%);
+    --chart-2: hsl(251.4545 84.6154% 74.5098%);
+    --chart-3: hsl(46.1538 28.2609% 81.9608%);
+    --chart-4: hsl(256.5517 49.1525% 88.4314%);
+    --chart-5: hsl(17.7778 60% 44.1176%);
+    --sidebar: hsl(51.4286 25.9259% 94.7059%);
+    --sidebar-foreground: hsl(60 2.5210% 23.3333%);
+    --sidebar-primary: hsl(15.1111 55.5556% 52.3529%);
+    --sidebar-primary-foreground: hsl(0 0% 98.4314%);
+    --sidebar-accent: hsl(46.1538 22.8070% 88.8235%);
+    --sidebar-accent-foreground: hsl(0 0% 20.3922%);
+    --sidebar-border: hsl(0 0% 92.1569%);
+    --sidebar-ring: hsl(0 0% 70.9804%);
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    
-    /* Border Radius */
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --radius: 0.5rem;
-    
-    /* Shadows - Disesuaikan untuk light mode */
-    --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
-    --shadow-xs: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05), 0 1px 3px 0 hsl(0 0% 0% / 0.1);
-    --shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
-    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
-    
-    /* Letter Spacing */
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
     --tracking-normal: 0em;
-    
-    /* Spacing */
     --spacing: 0.25rem;
   }
   
-  /* Dark Mode */
   .dark {
-    --background: hsl(220 14% 6%);
-    --foreground: hsl(0 0% 98%);
-    
-    --card: hsl(220 14% 8%);
-    --card-foreground: hsl(0 0% 98%);
-    
-    --popover: hsl(220 14% 8%);
-    --popover-foreground: hsl(0 0% 98%);
-    
-    /* Primary tetap sama di dark mode */
-    --primary: hsl(213 100% 50%); /* Sedikit lebih terang untuk dark mode */
+    --background: hsl(60 2.7027% 14.5098%);
+    --foreground: hsl(46.1538 9.7744% 73.9216%);
+    --card: hsl(60 2.7027% 14.5098%);
+    --card-foreground: hsl(48 33.3333% 97.0588%);
+    --popover: hsl(60 2.1277% 18.4314%);
+    --popover-foreground: hsl(60 5.4545% 89.2157%);
+    --primary: hsl(14.7692 63.1068% 59.6078%);
     --primary-foreground: hsl(0 0% 100%);
-    
-    /* Secondary tetap sama di dark mode */
-    --secondary: hsl(149 43% 55%); /* Sedikit lebih terang untuk dark mode */
-    --secondary-foreground: hsl(0 0% 100%);
-    
-    --muted: hsl(220 14% 12%);
-    --muted-foreground: hsl(220 14% 60%);
-    
-    --accent: hsl(149 43% 55%);
-    --accent-foreground: hsl(0 0% 100%);
-    
-    --destructive: hsl(0 84% 60%);
+    --secondary: hsl(48 33.3333% 97.0588%);
+    --secondary-foreground: hsl(60 2.1277% 18.4314%);
+    --muted: hsl(60 3.8462% 10.1961%);
+    --muted-foreground: hsl(51.4286 8.8608% 69.0196%);
+    --accent: hsl(48 10.6383% 9.2157%);
+    --accent-foreground: hsl(51.4286 25.9259% 94.7059%);
+    --destructive: hsl(0 84.2365% 60.1961%);
     --destructive-foreground: hsl(0 0% 100%);
-    
-    --border: hsl(220 14% 18%);
-    --input: hsl(220 14% 18%);
-    --ring: hsl(213 100% 50%);
-    
-    /* Chart colors adjusted for dark mode */
-    --chart-1: hsl(213 100% 50%);
-    --chart-2: hsl(149 43% 55%);
-    --chart-3: hsl(45 93% 65%);
-    --chart-4: hsl(262 83% 65%);
-    --chart-5: hsl(16 100% 70%);
-    
-    --sidebar: hsl(220 14% 8%);
-    --sidebar-foreground: hsl(0 0% 98%);
-    --sidebar-primary: hsl(213 100% 50%);
-    --sidebar-primary-foreground: hsl(0 0% 100%);
-    --sidebar-accent: hsl(149 43% 55%);
-    --sidebar-accent-foreground: hsl(0 0% 100%);
-    --sidebar-border: hsl(220 14% 18%);
-    --sidebar-ring: hsl(213 100% 50%);
-    
-    /* Dark mode shadows */
-    --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
-    --shadow-xs: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3), 0 1px 3px 0 hsl(0 0% 0% / 0.4);
-    --shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.4), 0 1px 2px 0 hsl(0 0% 0% / 0.3);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -1px hsl(0 0% 0% / 0.3);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4), 0 4px 6px -2px hsl(0 0% 0% / 0.3);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.4), 0 10px 10px -5px hsl(0 0% 0% / 0.2);
-    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.6);
+    --border: hsl(60 5.0847% 23.1373%);
+    --input: hsl(52.5000 5.1282% 30.5882%);
+    --ring: hsl(14.7692 63.1068% 59.6078%);
+    --chart-1: hsl(18.2813 57.1429% 43.9216%);
+    --chart-2: hsl(251.4545 84.6154% 74.5098%);
+    --chart-3: hsl(48 10.6383% 9.2157%);
+    --chart-4: hsl(248.2759 25.2174% 22.5490%);
+    --chart-5: hsl(17.7778 60% 44.1176%);
+    --sidebar: hsl(30 3.3333% 11.7647%);
+    --sidebar-foreground: hsl(46.1538 9.7744% 73.9216%);
+    --sidebar-primary: hsl(0 0% 20.3922%);
+    --sidebar-primary-foreground: hsl(0 0% 98.4314%);
+    --sidebar-accent: hsl(60 3.4483% 5.6863%);
+    --sidebar-accent-foreground: hsl(46.1538 9.7744% 73.9216%);
+    --sidebar-border: hsl(0 0% 92.1569%);
+    --sidebar-ring: hsl(0 0% 70.9804%);
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --radius: 0.5rem;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   }
   
-  /* Theme Inline Utilities */
   @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
@@ -302,17 +258,6 @@ body {
     --shadow-lg: var(--shadow-lg);
     --shadow-xl: var(--shadow-xl);
     --shadow-2xl: var(--shadow-2xl);
-  
-    --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
-    --tracking-tight: calc(var(--tracking-normal) - 0.025em);
-    --tracking-normal: var(--tracking-normal);
-    --tracking-wide: calc(var(--tracking-normal) + 0.025em);
-    --tracking-wider: calc(var(--tracking-normal) + 0.05em);
-    --tracking-widest: calc(var(--tracking-normal) + 0.1em);
-  }
-  
-  body {
-    letter-spacing: var(--tracking-normal);
   }
 }
 
